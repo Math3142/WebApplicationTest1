@@ -1,0 +1,29 @@
+﻿@model IEnumerable<WebApplication1.Models.Department>
+
+
+@{
+    ViewData["Title"] = "Departments";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="success">
+            <th>
+                @Html.DisplayNameFor(Department => Department.Name)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(Department => item.Name)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

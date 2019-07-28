@@ -1,0 +1,50 @@
+﻿
+@model IEnumerable<WebApplication1.Models.Seller>
+@{
+    ViewData["Title"] = "Sellers";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-default">Create new</a>
+</p>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="success">
+            <th>
+                @Html.DisplayNameFor(Seller => Seller.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Seller => Seller.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Seller => Seller.BirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Seller => Seller.BaseSalary)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Seller item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(Seller => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(Seller => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(Seller => item.BirthDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(Seller => item.BaseSalary)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
